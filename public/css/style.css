@@ -1,0 +1,55 @@
+body {
+  font-family:'Meiryo UI';
+}
+
+.mainlogo h1 {
+  display: block;
+  margin-top: 50px;
+  margin-left: 80px;
+}
+
+.search-bar {
+  margin-top: 20px;
+  margin-left: 80px;
+}
+
+table {
+ border-collapse: collapse;
+ border-spacing: 0;
+ margin: 50px 60px;
+ padding: 10px 10px;
+ text-align: center;
+}
+
+
+table th {
+  padding: 10px 10px;
+}
+
+
+.tables {
+  float: left;
+  width: 400px;
+  empty-cells: show;
+}
+
+.tables td {
+  width: 70%;
+}
+
+
+table tr:nth-child(odd){
+  background-color: #eee
+}
+
+.word-info {
+  width: 700px;
+}
+
+.word-info table td {
+  width: 70%;
+}
+
+li {
+  list-style: none;
+}

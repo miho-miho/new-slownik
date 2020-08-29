@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="mainlogo">
+    <h1>名詞辞書</h1>
+  </div>
+  <div class="search-bar">
+    <form action="/table" method="post" id="form">
+      <input type="text" name="wordItem">
+    </form>
+    <ul id="candidate">
+      <p><span></span></p>
+    </ul>
+  </div>
+  <div class="search-contents">
+    <div class="word-info">
+      <% rsMeta.forEach(function (item) { %>
+      <table border="1" width=auto>
+        <tr>
+          　　 <th>見出し語</th>
+          <td><%= item.headword %></td>
+          　　
+        </tr>
+        　　 <tr>
+          　　 <th>日本語訳</th>
+          　　 <td><%= item.japanese %></td>
+          　　 </tr>
+        　　 <tr>
+          　　 <th>名詞性</th>
+          　　 <td><%= item.gender %></td>
+          　　 </tr>
+        　　
+      </table>
+      <% }) %>
+      <% if (rsMeta.length < 1) { %>
+      <table border="1" width=auto>
+        <tr>
+          　　 <th>見出し語</th>
+          　　 <td></td>
+          　　 </tr>
+        　　 <tr>
+          　　 <th>日本語訳</th>
+          　　 <td></td>
+          　　 </tr>
+        　 　<tr>
+          　　 <th>名詞性</th>
+          　 　 <td></td>
+          　　 </tr>
+      </table>
+      <% } %>
+    </div>
+    <div class="word-table">
+      <table class="tables" border="1">
+        <tr>
+          <th>主格</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>生格</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>与格</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>対格</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>造格</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>前置格</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>呼格</th>
+          <td></td>
+        </tr>
+      </table>
+      <table class="tables" border="1" width=auto>
+        <tr>
+          <th>主格・呼格</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>生格</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>与格</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>対格</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>造格</th>
+          <td></td>
+        </tr>
+        <tr>
+          <th>前置格</th>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
