@@ -15,6 +15,14 @@ const connection = mysql.createConnection({
   database: env.DB_NAME
 });
 
+connection.connect((err) => {
+  if (err) {
+    console.log('error connecting: ' + err.stack);
+    return;
+  }
+  console.log('success');
+});
+
 app.use(express.urlencoded({
   extended: false
 }));
