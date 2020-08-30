@@ -56,97 +56,97 @@
     </div>
     <div class="word-table">
       <% rsWordlist.forEach(function (word) { %>
+       <table class="tables" border="1">
+         <tr>
+           <th>主格</th>
+           <td><%= word.mia %></td>
+         </tr>
+         <tr>
+           <th>生格</th>
+           <td><%= word.dop %></td>
+         </tr>
+         <tr>
+           <th>与格</th>
+           <td><%= word.cel %></td>
+         </tr>
+         <tr>
+           <th>対格</th>
+           <td><%= word.bie %></td>
+         </tr>
+         <tr>
+           <th>造格</th>
+           <td><%= word.narz %></td>
+         </tr>
+         <tr>
+           <th>前置格</th>
+           <td><%= word.mie %></td>
+         </tr>
+         <tr>
+           <th>呼格</th>
+           <td><%= word.wol %></td>
+         </tr>
+       </table>
+       <table class="tables" border="1" width=auto>
+         <tr>
+           <th>主格・呼格</th>
+           <td><%= word.mia_wol %></td>
+         </tr>
+         <tr>
+           <th>生格</th>
+           <td><%= word.dop_pl %></td>
+         </tr>
+         <tr>
+           <th>与格</th>
+           <td><%= word.cel_pl %></td>
+         </tr>
+         <tr>
+           <th>対格</th>
+           <td><%= word.bie_pl %></td>
+         </tr>
+         <tr>
+           <th>造格</th>
+           <td><%= word.narz_pl %></td>
+         </tr>
+         <tr>
+           <th>前置格</th>
+           <td><%= word.mie_pl %></td>
+         </tr>
+       </table>
+     <% }) %>
+     <% if (rsWordlist.length < 1) { %>
         <table class="tables" border="1">
           <tr>
             <th>主格</th>
-            <td><%= word.mia %></td>
+            <td></td>
           </tr>
           <tr>
             <th>生格</th>
-            <td><%= word.dop %></td>
+            <td></td>
           </tr>
           <tr>
             <th>与格</th>
-            <td><%= word.cel %></td>
+            <td></td>
           </tr>
           <tr>
             <th>対格</th>
-            <td><%= word.bie %></td>
+            <td></td>
           </tr>
           <tr>
             <th>造格</th>
-            <td><%= word.narz %></td>
+            <td></td>
           </tr>
           <tr>
             <th>前置格</th>
-            <td><%= word.mie %></td>
+            <td></td>
           </tr>
           <tr>
             <th>呼格</th>
-            <td><%= word.wol %></td>
+            <td></td>
           </tr>
         </table>
         <table class="tables" border="1" width=auto>
           <tr>
             <th>主格・呼格</th>
-            <td><%= word.mia_wol %></td>
-          </tr>
-          <tr>
-            <th>生格</th>
-            <td><%= word.dop_pl %></td>
-          </tr>
-          <tr>
-            <th>与格</th>
-            <td><%= word.cel_pl %></td>
-          </tr>
-          <tr>
-            <th>対格</th>
-            <td><%= word.bie_pl %></td>
-          </tr>
-          <tr>
-            <th>造格</th>
-            <td><%= word.narz_pl %></td>
-          </tr>
-          <tr>
-            <th>前置格</th>
-            <td><%= word.mie_pl %></td>
-          </tr>
-        </table>
-      <% }) %>
-      <% if (rsWordlist.length < 1) { %>
-        <table class="tables" border="1">
-          <tr>
-            <th>主格</th>
-            <td><%= word.mia %></td>
-          </tr>
-          <tr>
-            <th>生格</th>
-            <td><%= word.dop %></td>
-          </tr>
-          <tr>
-            <th>与格</th>
-            <td><%= word.cel %></td>
-          </tr>
-          <tr>
-            <th>対格</th>
-            <td><%= word.bie %></td>
-          </tr>
-          <tr>
-            <th>造格</th>
-            <td><%= word.narz %></td>
-          </tr>
-          <tr>
-            <th>前置格</th>
-            <td><%= word.mie %></td>
-          </tr>
-          <tr>
-            <th>呼格</th>
-            <td><%= word.wol %></td>
-          </tr>
-        </table>
-        <table class="tables" border="1" width=auto>
-          <tr>
-            <th>主格・呼格</th>
             <td></td>
           </tr>
           <tr>
@@ -167,7 +167,7 @@
           </tr>
           <tr>
             <th>前置格</th>
-            <td><%= word.mie_pl %></td>
+            <td></td>
           </tr>
         </table>
       <% } %>
