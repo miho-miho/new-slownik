@@ -15,12 +15,13 @@ const connection = mysql.createConnection({
   database: env.DB_NAME
 });
 
+//データベースとの接続確認
 connection.connect((err) => {
   if (err) {
     console.log('error connecting: ' + err.stack);
     return;
   }
-  console.log('success');
+  console.log('success');　　//問題なければ「success」を
 });
 
 app.use(express.urlencoded({
@@ -53,7 +54,7 @@ app.post('/table', (req, res) => {
       const rsMeta = rows;
 
       connection.query('SELECT * FROM wordlist WHERE mia = ? LIMIT 1',
-        [req.body.wordItem],
+        ['%' + req.body.wordItem],
         function (err, rows, fields) {
 
           if (err) {
