@@ -34,7 +34,7 @@ app.get('/table', (req, res) => {
 
 // 検索結果画面
 app.post('/table', (req, res) => {
-  connection.query('SELECT * FROM info WHERE headword = ? LIMIT 1',
+  connection.query('SELECT * FROM meta WHERE headword = ? LIMIT 1',
     [req.body.wordItem],
     function (err, rows, fields) {
 
@@ -44,7 +44,7 @@ app.post('/table', (req, res) => {
 
       const rsMeta = rows;
 
-      connection.query('SELECT * FROM info WHERE headword = ? LIMIT 1',
+      connection.query('SELECT * FROM wordlist WHERE mia = ? LIMIT 1',
         [req.body.wordItem],
         function (err, rows, fields) {
 
