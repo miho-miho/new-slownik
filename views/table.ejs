@@ -19,7 +19,7 @@
   </div>
   <div class="search-contents">
     <div class="word-info">
-      <% rsMeta.forEach(function (item) { %>
+      <% rsWordlist.forEach(function (item) { %>
       <table border="1" width=auto>
         <tr>
           　　 <th>見出し語</th>
@@ -37,7 +37,7 @@
         　　
       </table>
       <% }) %>
-      <% if (rsMeta.length < 1) { %>
+      <% if (rsWordlist.length < 1) { %>
       <table border="1" width=auto>
         <tr>
           　　 <th>見出し語</th>
