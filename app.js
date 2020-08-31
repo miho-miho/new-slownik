@@ -43,18 +43,51 @@ app.get('/table', (req, res) => {
 
 // 検索結果画面
 app.post('/table', (req, res) => {
-  connection.query('SELECT * FROM meta WHERE headword  LIKE ? LIMIT 1',
-    [req.body.wordItem + '%'],
-    function (err, rows, fields) {
 
-      if (err) {
-        console.log('err(meta): ' + err);
-      }
-
-      const rsMeta = rows;
-
-      connection.query('SELECT * FROM wordlist WHERE mia LIKE ? LIMIT 1',
-        [req.body.wordItem + '%'],
+      connection.query('SELECT
+  w.id
+  , w.mia
+  , w.dop
+  , w.cel
+  , w.bie
+  , w.wol
+  , w.mia_wol
+  , w.dop_pl
+  , w.cel_pl
+  , w.bie_pl
+  , w.narz_pl
+  , w.mie_pl
+FROM
+  wordlist w
+  LEFT OUTER JOIN meta m ON
+    m.id = w.meta_id
+WHERE
+  (w.mia LIKE ?)
+  OR (w.dop LIKE ?)
+  OR (w.cel LIKE ?)
+  OR (w.bie LIKE ?)
+  OR (w.narz LIKE ?)
+  OR (w.mie LIKE ?)
+  OR (w.wol LIKE ?)
+  OR (w.mia_wol LIKE ?)
+  OR (w.dop_pl LIKE ?)
+  OR (w.cel_pl LIKE ?)
+  OR (w.bie_pl LIKE ?)
+  OR (w.narz_pl LIKE ?)
+  OR (w.mie_pl LIKE ?)',
+  [
+'%' + req.body.wordItem + '%'
+, '%' + req.body.wordItem + '%'
+, '%' + req.body.wordItem + '%'
+, '%' + req.body.wordItem + '%'
+, '%' + req.body.wordItem + '%'
+, '%' + req.body.wordItem + '%'
+, '%' + req.body.wordItem + '%'
+, '%' + req.body.wordItem + '%'
+, '%' + req.body.wordItem + '%'
+, '%' + req.body.wordItem + '%'
+, '%' + req.body.wordItem + '%'
+],
         function (err, rows, fields) {
 
           if (err) {
@@ -63,7 +96,6 @@ app.post('/table', (req, res) => {
           const rsWordlist = rows;
 
           res.render('table.ejs', {
-            rsMeta: rsMeta,
             rsWordlist: rsWordlist,
           });
 
