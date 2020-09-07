@@ -3,6 +3,7 @@
 
 <head>
   <link rel="stylesheet" href="/css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -13,17 +14,28 @@
     <form action="/table" method="post" id="form">
       <input type="text" name="wordItem" id='searchvar'>
     </form>
+  </div>
+  <script>
+      $('#searchvar').keyup(function() {
+    isChange = true;
+        alert();
+
+        $.ajax({
+            url: '/search',
+            type:'POST',
+            dataType: 'json',
+            data : {parameter1 : $('#searchvar').val() },
+            timeout:3000,
+        }).done(function(data) {
+                          alert("ok");
+        }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
+                         alert("error");
+        });
+      });
+    </script>
     <ul id="candidate">
       <p><span></span></p>
     </ul>
-  </div>
-  <script>
-    let input = document.getElementById('searchvar');
-    input.onkeyup = printKey;
-    function printKey(e){
-      console.log(e.key);
-    }
-</script>
   <div class="search-contents">
     <div class="word-info">
       <% rsWordlist.forEach(function (item) { %>
