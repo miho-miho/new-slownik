@@ -17,25 +17,22 @@
   </div>
   <script>
       $('#searchvar').keyup(function() {
-    isChange = true;
-        alert();
-
         $.ajax({
             url: '/search',
             type:'POST',
             dataType: 'json',
-            data : {parameter1 : $('#searchvar').val() },
+            data : {wordItem: $('#searchvar').val() },
             timeout:3000,
         }).done(function(data) {
-                          alert(data.message);
+                        alert(data.message);
         }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
                          alert("error");
         });
       });
     </script>
-    <ul id="candidate">
-      <p><span></span></p>
-    </ul>
+      <ul id="candidate">
+        <p><span></span></p>
+      </ul>
   <div class="search-contents">
     <div class="word-info">
       <% rsWordlist.forEach(function (item) { %>
