@@ -40,6 +40,12 @@ app.get('/table', (req, res) => {
   });
 });
 
+app.post('/search',function(req,res){
+    res.json({
+        message:req.body.parameter1
+    });
+});
+
 // 検索結果画面
 app.post('/table', (req, res) => {
 

@@ -27,7 +27,7 @@
             data : {parameter1 : $('#searchvar').val() },
             timeout:3000,
         }).done(function(data) {
-                          alert("ok");
+                          alert(data.message);
         }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
                          alert("error");
         });
