@@ -28,6 +28,13 @@ app.use(express.urlencoded({
   extended: false
 }));
 
+const jsdom = require('jsdom');
+const { JSDOM } = jsdom;
+const dom = new JSDOM(`<html></html>`);
+const { document } = dom.window;
+const jquery = require('jquery');
+const $ = jquery(dom.window);
+
 //ホームの表示
 app.get('/', (req, res) => {
   res.render('index.ejs');
