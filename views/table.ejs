@@ -17,6 +17,13 @@
       <p><span></span></p>
     </ul>
   </div>
+  <script>
+    let input = document.getElementById('searchvar');
+    input.onkeyup = printKey;
+    function printKey(e){
+      console.log(e.key);
+    }
+</script>
   <div class="search-contents">
     <div class="word-info">
       <% rsWordlist.forEach(function (item) { %>
