@@ -13,6 +13,8 @@
   <div class="search-bar">
     <form action="/table" method="post" id="form">
       <input type="text" name="wordItem" id='searchvar'>
+      <dl id="wrap"><p id="candidate">ここに候補がでます</p>
+      </dl>
     </form>
   </div>
   <script>
@@ -24,15 +26,22 @@
             data : {wordItem: $('#searchvar').val() },
             timeout:3000,
         }).done(function(data) {
-                        console.log(data.message);
+          let rs = data.message;
+            for(var i in rs){
+              var h = '<dt>'
+                + rs[i].headword
+                + '</dt>'
+                + '<dd>'
+                + rs[i].japanese
+                + '</dd>';
+              $("dl#wrap").append(h);
+            }
         }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
                          alert("error");
         });
+        $("dl#wrap").empty();
       });
     </script>
-    <ul id="candidate">
-      <li></li>
-    </ul>
   <div class="search-contents">
     <div class="word-info">
       <% rsWordlist.forEach(function (item) { %>
@@ -53,22 +62,6 @@
         　　
       </table>
       <% }) %>
-      <% if (rsWordlist.length < 1) { %>
-      <table border="1" width=auto>
-        <tr>
-          　　 <th>見出し語</th>
-          　　 <td></td>
-          　　 </tr>
-        　　 <tr>
-          　　 <th>日本語訳</th>
-          　　 <td></td>
-          　　 </tr>
-        　 　<tr>
-          　　 <th>名詞性</th>
-          　 　 <td></td>
-          　　 </tr>
-      </table>
-      <% } %>
     </div>
     <div class="word-table">
       <% rsWordlist.forEach(function (word) { %>
@@ -129,64 +122,6 @@
          </tr>
        </table>
      <% }) %>
-     <% if (rsWordlist.length < 1) { %>
-        <table class="tables" border="1">
-          <tr>
-            <th>主格</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>生格</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>与格</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>対格</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>造格</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>前置格</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>呼格</th>
-            <td></td>
-          </tr>
-        </table>
-        <table class="tables" border="1" width=auto>
-          <tr>
-            <th>主格・呼格</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>生格</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>与格</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>対格</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>造格</th>
-            <td></td>
-          </tr>
-          <tr>
-            <th>前置格</th>
-            <td></td>
-          </tr>
-        </table>
-      <% } %>
     </div>
   </div>
 </body>

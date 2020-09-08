@@ -50,6 +50,12 @@ table tr:nth-child(odd){
   width: 70%;
 }
 
-li {
-  list-style: none;
+dt {
+  float: left;
+  clear: left;
+	width: 120px ;
+}
+
+dd {
+  float: left;
 }
