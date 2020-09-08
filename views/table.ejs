@@ -24,15 +24,15 @@
             data : {wordItem: $('#searchvar').val() },
             timeout:3000,
         }).done(function(data) {
-                        alert(data.message);
+                        console.log(data.message);
         }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
                          alert("error");
         });
       });
     </script>
-      <ul id="candidate">
-        <p><span></span></p>
-      </ul>
+    <ul id="candidate">
+      <li></li>
+    </ul>
   <div class="search-contents">
     <div class="word-info">
       <% rsWordlist.forEach(function (item) { %>
