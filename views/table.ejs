@@ -13,7 +13,8 @@
   <div class="search-bar">
     <form action="/table" method="post" id="form">
       <input type="text" name="wordItem" id='searchvar'>
-      <dl id="wrap"><p id="candidate">ここに候補がでます</p>
+      <p id="candidate">ここに候補がでます</p>
+      <dl id="wrap">
       </dl>
     </form>
   </div>
@@ -26,6 +27,7 @@
             data : {wordItem: $('#searchvar').val() },
             timeout:3000,
         }).done(function(data) {
+          $('p#candidate').empty();
           let rs = data.message;
             for(var i in rs){
               var h = '<dt>'
@@ -35,11 +37,14 @@
                 + rs[i].japanese
                 + '</dd>';
               $("dl#wrap").append(h);
+              if(document.getElementById('searchvar').value === "" || document.getElementById('searchvar').value === null){
+                $('dl#wrap').empty();
+              }
             }
         }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
                          alert("error");
         });
-        $("dl#wrap").empty();
+        $('dl#wrap').empty();
       });
     </script>
   <div class="search-contents">
