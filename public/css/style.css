@@ -8,6 +8,10 @@ body {
   margin-left: 80px;
 }
 
+#message {
+  display: none;
+}
+
 .search-bar {
   margin-top: 20px;
   margin-left: 80px;

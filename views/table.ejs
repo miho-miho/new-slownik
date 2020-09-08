@@ -13,7 +13,7 @@
   <div class="search-bar">
     <form action="/table" method="post" id="form">
       <input type="text" name="wordItem" id='searchvar'>
-      <p id="candidate">ここに候補がでます</p>
+      <p id = "message">見つかりませんでした</p>
       <dl id="wrap">
       </dl>
     </form>
@@ -27,8 +27,11 @@
             data : {wordItem: $('#searchvar').val() },
             timeout:3000,
         }).done(function(data) {
-          $('p#candidate').empty();
           let rs = data.message;
+          if(data.message.length < 1){
+            $('p#message').replaceWith('<p>見つかりませんでした</p>');
+          } else {
+            $('p#message').empty();
             for(var i in rs){
               var h = '<dt>'
                 + rs[i].headword
@@ -39,8 +42,10 @@
               $("dl#wrap").append(h);
               if(document.getElementById('searchvar').value === "" || document.getElementById('searchvar').value === null){
                 $('dl#wrap').empty();
+                $('p#message').empty();
               }
             }
+          }
         }).fail(function(XMLHttpRequest, textStatus, errorThrown) {
                          alert("error");
         });
