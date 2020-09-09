@@ -43,19 +43,19 @@ app.get('/table', (req, res) => {
 app.post('/search',function(req,res){
   connection.query('SELECT w.mia, w.dop, w.cel, w.bie, w.narz, w.mie, w.wol, w.mia_wol, w.dop_pl, w.cel_pl, w.bie_pl, w.narz_pl, w.mie_pl, m.headword, m.japanese  FROM wordlist w LEFT OUTER JOIN meta m ON m.id = w.meta_id WHERE (w.mia LIKE ?) OR (w.dop LIKE ?) OR (w.cel LIKE ?) OR (w.bie LIKE ?) OR (w.narz LIKE ?) OR (w.mie LIKE ?) OR (w.wol LIKE ?) OR (w.mia_wol LIKE ?) OR (w.dop_pl LIKE ?) OR (w.cel_pl LIKE ?) OR (w.bie_pl LIKE ?) OR (w.narz_pl LIKE ?) OR (w.mie_pl LIKE ?)',
     [
-      '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
+      req.body.wordItem + '%'
+      , req.body.wordItem + '%'
+      , req.body.wordItem + '%'
+      , req.body.wordItem + '%'
+      , req.body.wordItem + '%'
+      , req.body.wordItem + '%'
+      , req.body.wordItem + '%'
+      , req.body.wordItem + '%'
+      , req.body.wordItem + '%'
+      , req.body.wordItem + '%'
+      , req.body.wordItem + '%'
+      , req.body.wordItem + '%'
+      , req.body.wordItem + '%'
     ],
       function (err, rows, fields) {
         res.json({
@@ -69,21 +69,21 @@ app.post('/search',function(req,res){
 app.post('/table', (req, res) => {
 
   connection.query('SELECT w.id, w.mia, w.dop, w.cel, w.bie, w.narz, w.mie, w.wol, w.mia_wol, w.dop_pl, w.cel_pl, w.bie_pl, w.narz_pl, w.mie_pl, m.headword, m.japanese, m.gender FROM wordlist w LEFT OUTER JOIN meta m ON m.id = w.meta_id WHERE (w.mia LIKE ?) OR (w.dop LIKE ?) OR (w.cel LIKE ?) OR (w.bie LIKE ?) OR (w.narz LIKE ?) OR (w.mie LIKE ?) OR (w.wol LIKE ?) OR (w.mia_wol LIKE ?) OR (w.dop_pl LIKE ?) OR (w.cel_pl LIKE ?) OR (w.bie_pl LIKE ?) OR (w.narz_pl LIKE ?) OR (w.mie_pl LIKE ?)',
-    [
-      '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-      , '%' + req.body.wordItem + '%'
-    ],
+  [
+    req.body.wordItem + '%'
+    , req.body.wordItem + '%'
+    , req.body.wordItem + '%'
+    , req.body.wordItem + '%'
+    , req.body.wordItem + '%'
+    , req.body.wordItem + '%'
+    , req.body.wordItem + '%'
+    , req.body.wordItem + '%'
+    , req.body.wordItem + '%'
+    , req.body.wordItem + '%'
+    , req.body.wordItem + '%'
+    , req.body.wordItem + '%'
+    , req.body.wordItem + '%'
+  ],
       function (err, rows, fields) {
           if (err) {
             console.log('err(wordlist): ' + err);
@@ -97,5 +97,9 @@ app.post('/table', (req, res) => {
         });
     });
 
+//単語リクエスト画面
+app.get('/request', (req, res) => {
+  res.render('request.ejs');
+});
 
 app.listen(3000);

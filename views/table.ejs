@@ -13,7 +13,11 @@
   <div class="search-bar">
     <form action="/table" method="post" id="form">
       <input type="text" name="wordItem" id='searchvar'>
-      <p id = "message">見つかりませんでした</p>
+      <div id = "message">
+        <p id = "attention1"></p>
+        <p id = "attention2"></p>
+        <a id = "request"></a>
+      </div>
       <dl id="wrap">
       </dl>
     </form>
@@ -29,9 +33,10 @@
         }).done(function(data) {
           let rs = data.message;
           if(data.message.length < 1){
-            $('p#message').replaceWith('<p>見つかりませんでした</p>');
+            $('#attention1').replaceWith('<p id = "m1">見つかりませんでした</p>');
+            $('#attention2').replaceWith('<p id = "m2">データ拡充にご協力ください</p>');
+            $('#request').replaceWith('<a href="/request" id = "m3">＋単語リクエスト</a>');
           } else {
-            $('p#message').empty();
             for(var i in rs){
               var h = '<dt>'
                 + rs[i].headword
@@ -42,7 +47,6 @@
               $("dl#wrap").append(h);
               if(document.getElementById('searchvar').value === "" || document.getElementById('searchvar').value === null){
                 $('dl#wrap').empty();
-                $('p#message').empty();
               }
             }
           }
@@ -50,6 +54,9 @@
                          alert("error");
         });
         $('dl#wrap').empty();
+        $('#m1').replaceWith('<p id = "attention1"></p>');
+        $('#m2').replaceWith('<p id = "attention2"></p>');
+        $('#m3').replaceWith('<a id = "request"></a>');
       });
     </script>
   <div class="search-contents">
