@@ -59,7 +59,7 @@ app.post('/search',function(req,res){
     ],
       function (err, rows, fields) {
         res.json({
-        message:rows
+        message:rows  //結果を「message」に代入
       });
     });
   });
