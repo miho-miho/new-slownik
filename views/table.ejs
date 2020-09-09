@@ -13,7 +13,7 @@
   <div class="search-bar">
     <form action="/table" method="post" id="form">
       <input type="text" name="wordItem" id='searchvar'>
-      <input type="submit" name="" value="検索">
+      <input type="submit" id = "submit" value="検索">
       <div id = "message">
         <p id = "attention1"></p>
         <p id = "attention2"></p>
@@ -23,6 +23,16 @@
       </dl>
     </form>
   </div>
+  <script>
+  if(document.getElementById('searchvar').value === "" || document.getElementById('searchvar').value === null){
+    document.getElementById("form").onkeypress = (e) => {
+      const key = e.keyCode || e.charCode || 0;
+      if (key == 13) {
+        e.preventDefault();
+      }
+    }
+  }
+  </script>
   <script>
       $('#searchvar').keyup(function() {  //検索バーでキーが離されたら処理
         $.ajax({
@@ -46,6 +56,7 @@
                 + rs[i].japanese
                 + '</dd>';
               $("dl#wrap").append(h);
+              $('.search-contents').hide();
               if(document.getElementById('searchvar').value === "" || document.getElementById('searchvar').value === null){
                 $('dl#wrap').empty();  //検索バーが空の時、候補の中身を空にする
               }
