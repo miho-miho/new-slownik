@@ -6,8 +6,15 @@
     <title>request</title>
   </head>
   <body>
-    <h1>単語リクエスト</h1>
-    <a href="/new" class="new-button">+ 新規作成</a>
+    <header class="header">
+      <a href="/">ホーム</a>
+      <a href="/table">名詞格変化逆引き辞書</a>
+      <a href="/request">単語リクエスト</a>
+    </header>
+    <div class="Request">
+      <h1>単語リクエスト</h1>
+      <a href="/new" class="new-button">+ 新規作成</a>
+    </div>
     <ul class="table-body">
       <% items.forEach((item) => { %>
             <li>

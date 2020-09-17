@@ -6,9 +6,13 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
+    <header class="header">
+      <a href="/">ホーム</a>
+      <a href="/table">名詞格変化逆引き辞書</a>
+      <a href="/request">単語リクエスト</a>
+    </header>
     <h1>単語リクエスト</h1>
     <div class="item-form-wrapper">
-        <p class="form-label">単語リクエスト</p>
         <form action="/create" method="post">
           <input name="newWrod" type="text">
           <input type="submit" value="追加する">
