@@ -98,8 +98,24 @@ app.post('/table', (req, res) => {
     });
 
 //単語リクエスト画面
-app.get('/request', (req, res) => {
-  res.render('request.ejs');
+app.get('/new', (req, res) => {
+  res.render('new.ejs');
+});
+
+app.post('/create', (req, res) => {
+  // データベースに追加する処理を書いてください
+  connection.query(
+    'INSERT INTO items (name) VALUES (?)',
+    [req.body.itemName],
+    (error, results) => {
+      connection.query(
+        'SELECT * FROM items',
+        (error, results) => {
+          res.render('request.ejs', {items: results});
+        }
+      );
+     }
+   );
 });
 
 app.listen(3000);
