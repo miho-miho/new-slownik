@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>request</title>
+  </head>
+  <body>
+    <h1>単語リクエスト</h1>
+    <a href="/new" class="new-button">+ 新規作成</a>
+    <ul class="table-body">
+      <% items.forEach((item) => { %>
+            <li>
+              <div class="item-data">
+                <span class="id-column"><%= item.id %></span>
+                <span class="name-column"><%= item.newword %></span>
+              </div>
+            </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>

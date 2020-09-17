@@ -33,6 +33,7 @@ app.get('/', (req, res) => {
   res.render('index.ejs');
 });
 
+
 // 検索前画面
 app.get('/table', (req, res) => {
   res.render('table.ejs', {
@@ -98,6 +99,15 @@ app.post('/table', (req, res) => {
     });
 
 //単語リクエスト画面
+app.get('/request', (req, res) => {
+  connection.query(
+    'SELECT * FROM request',
+    (error, results) => {
+      res.render('request.ejs', {items: results});
+    }
+  );
+});
+
 app.get('/new', (req, res) => {
   res.render('new.ejs');
 });
@@ -105,17 +115,13 @@ app.get('/new', (req, res) => {
 app.post('/create', (req, res) => {
   // データベースに追加する処理を書いてください
   connection.query(
-    'INSERT INTO items (name) VALUES (?)',
-    [req.body.itemName],
+    'INSERT INTO request (newword) VALUES (?)',
+    [req.body.newWrod],
     (error, results) => {
-      connection.query(
-        'SELECT * FROM items',
-        (error, results) => {
-          res.render('request.ejs', {items: results});
-        }
-      );
+      res.redirect('/request')
      }
    );
 });
+
 
 app.listen(3000);
