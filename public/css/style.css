@@ -6,73 +6,65 @@ header {
   position: fixed;
   height: 65px;
   width: 100%;
+  z-index: 20;
   top: 0;
-  z-index: 10;
+  left: 0;
 }
 
 /* index.ejsの設定 */
-.top-image-right {
-  text-align: right;
-  overflow: hidden;
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 5;
-
-}
-
 .header-menu a {
-  line-height: 65px;
-  float: left;
-  padding: 0 25px;
-  display: block;
-  font-size: 23px;
+  margin: 5px;
+  padding: 10px;
   color: black;
-  text-decoration: none;
 }
 
 .header-menu a:hover {
-  background-color: rgba(178, 38, 0, 0.1);
+  color: black;
+  background-color: rgba(178, 0, 0, 0.1);
 }
 
 .main-logo {
   display: block;
-  margin-top: 40px;
-  position: absolute;
+  margin-top: 60px;
   width: 100%;
-  z-index: 15;
+  text-align: center;
+  z-index: 20;
+  position: relative;
 }
 
 .main-logo h1{
-  padding: 10px 30px 5px 0px;
-  font-size: 60px;
-  margin-bottom: 0px;
+  padding: 10px 0 10px 0;
+  font-size: 50px;
+  margin: 0;
+  font-weight: bold;
 }
 
 .main-logo h2 {
-  padding-left: 120px;
+  font-size: 25px;
   font-weight: normal;
 }
 
 .main {
-  display: block;
+  text-align: center;
+  position: relative;
 }
 
 .card {
   display: block;
   float: left;
-  margin: 300px 20px 10px 40px;
+  margin: 60px 20px 10px 40px;
   z-index: 15;
-  position: relative;
 }
 
 .card-title {
   text-align: center;
   font-size: 20px;
+  font-weight: bolder;
 }
 
 .card-text {
   color: gray;
+  text-align: left;
 }
 
 .bth_contents  {
@@ -80,6 +72,29 @@ header {
   padding-top: 20px;
 }
 
+.top-image-right {
+  text-align: right;
+  overflow: hidden;
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 0;
+  right: 0;
+}
+
+.top-image-left {
+  text-align: left;
+  overflow: hidden;
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 0;
+  left: 0;
+}
+
+footer {
+  text-align: center;
+}
 /* table.ejsの設定 */
 
 h1 {
