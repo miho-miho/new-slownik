@@ -2,6 +2,58 @@ body {
   font-family:'Meiryo UI';
 }
 
+header {
+  position: fixed;
+  height: 65px;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+
+/* index.ejsの設定 */
+.top-image-right {
+  text-align: right;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+
+}
+
+.header-menu a {
+  line-height: 65px;
+  float: left;
+  padding: 0 25px;
+  display: block;
+  font-size: 23px;
+  color: black;
+  text-decoration: none;
+}
+
+.header-menu a:hover {
+  background-color: rgba(178, 38, 0, 0.1);
+}
+
+.main-logo {
+  display: block;
+  margin-top: 40px;
+  position: absolute;
+  width: 100%;
+  z-index: 15;
+}
+
+.main-logo h1{
+  padding: 10px 30px 5px 10px;
+  font-size: 50px;
+}
+
+.main-logo h2 {
+  padding-left: 120px;
+  font-weight: normal;
+}
+
+/* table.ejsの設定 */
+
 h1 {
   display: block;
   margin-top: 50px;
