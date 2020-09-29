@@ -1,18 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container-fluid {
+  margin: 0
+  padding: 0;
+}
+
 body {
   font-family:'Meiryo UI';
-  background-image: url(/images/back2.png);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center center;
 }
 
 header {
+	position: relative;
+  color: white;
+  text-align: center;
+}
+
+#header-logo {
+  padding: 0;
+  font-weight: bold;
+  font-size: 60px;
+}
+
+.headerlogo {
+  text-align: center;
+  padding-top: 120px;
+  color: white;
+}
+
+.header-menu {
   position: fixed;
   height: 65px;
   width: 100%;
   z-index: 20;
-  top: 0;
-  left: 0;
+  left: 0ł
 }
 
 /* index.ejsの設定 */
@@ -25,132 +48,20 @@ header {
 
 .header-menu a:hover {
   color: black;
-  background-color: rgba(178, 0, 0, 0.1);
+  background-color: ;
 }
 
-.main-logo {
-  display: block;
-  margin-top: 100px;
-  width: 100%;
-  text-align: center;
-  z-index: 20;
-  position: relative;
-}
-
-.main-logo h1{
-  margin-top: 30px;
-  padding: 20px 0 10px 0;
-  font-size: 50px;
-  margin: 0;
-  font-weight: bold;
-}
-
-.main-logo h2 {
-  font-size: 25px;
-  font-weight: normal;
+.contents {
+  box-sizing: border-box;
+  padding-top:50px;
+  margin-top: 50px;
 }
 
 .main {
-  text-align: center;
-  position: relative;
-}
-
-.card {
-  display: block;
-  float: left;
-  margin: 80px 30px 10px 40px;
-  z-index: 15;
+  margin-top: 0;
+  background-color: #dfe4f2;
 }
 
 .card-body {
-  size:
+  position: relative;
 }
-
-.card-title {
-  text-align: center;
-  font-size: 20px;
-  font-weight: bolder;
-}
-
-.card-text {
-  color: gray;
-  text-align: left;
-}
-
-.bth_contents  {
-  text-align: center;
-  padding-top: 20px;
-}
-
-.top-image {
-  overflow: hidden;
-  position: absolute;
-  height: auto;
-  top: 0;
-  right: 0;
-}
-
-footer {
-  text-align: center;
-}
-/* table.ejsの設定 */
-
-.mainlogo h1 {
-  display: block;
-  text-align: center;
-  padding-top: 100px;
-  padding-bottom: 20px;
-
-}
-
-.searhform {
-  text-align: center;
-}
-
-table {
-  text-align: center;
-  padding: 10 10 0 0;
-}
-
-table th {
-  padding: 10px 10px;
-}
-
-
-.tables {
-  float: left;
-  width: 400px;
-  empty-cells: show;
-  padding-right: 20px;
-  padding-bottom: 20px;
-}
-
-.tables td {
-  width: 70%;
-}
-
-
-table tr:nth-child(odd){
-  background-color: #eee
-}
-
-.word-info {
-  width: 700px;
-  padding-bottom: 50px;
-}
-
-.word-info table td {
-  width: 70%;
-}
-
-dt {
-  float: left;
-  clear: left;
-	width: 120px ;
-}
-
-dd {
-  float: left;
-}
-
-/*request.ejsの設定*/
