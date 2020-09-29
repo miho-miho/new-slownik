@@ -12,11 +12,26 @@
     <header>
       <div class="jumbotron jumbotron-fluid" style="background:url(/images/image1.jpg); background-size: cover;">
         <div class="container">
-          <h1 id="header-logo">Słownik</h1>
+          <h1><a href="/" id="header-logo">Słownik</a></h1>
           <p class="lead">日本語で使えるポーランド語学習支援Webアプリケーション</p>
         </div>
       </div>
     </header>
+    <div class="header-menu">
+      <div class="pos-f-t">
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5 class="text-white h4">Collapsed content</h5>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+</div>
+    </div>
     <div class="preamble">
 
     </div>
@@ -29,9 +44,11 @@
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">カードのタイトル</h5>
-              <p class="card-text">...</p>
-              <p class="card-text"><small class="text-muted">最終更新3分前</small></p>
+              <h5 class="card-title">名詞格変化逆引き辞書</h5>
+              <p class="card-text">名詞を、辞書の見出し語（単数主格形）と格変化後の形の両方から検索できます。検索結果として、見出し語・名詞性・簡易日本語訳と格変化表を表示します。学習する単語と辞書の間を繋ぐ役割を持ち、初学者が躓きやすい名詞格変化学習をサポートします。</p>
+              <div class="bth_contents">
+                <a href="/table" role="button" class="btn btn-outline-info"><i class="fas fa-search"></i>検索する</a>
+              </div>
             </div>
           </div>
         </div>
@@ -40,30 +57,34 @@
         <div class="row no-gutters">
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">カードのタイトル</h5>
-              <p class="card-text">...</p>
-              <p class="card-text"><small class="text-muted">最終更新3分前</small></p>
+              <h5 class="card-title">単語リクエスト</h5>
+              <p class="card-text">名詞格変化逆引き辞書に収録されていなかった単語について収録を依頼することが出来ます。リクエストされた単語は管理者によって辞書に追加されます。単語の数・格に指定はありません。データ拡充にご協力お願い致します。</p>
+              <div class="bth_contents">
+                <a href="/request" role="button" class="btn btn-outline-info"><i class="fas fa-plus"></i></i>検索する</a>
+              </div>
             </div>
           </div>
           <div class="col-md-4">
-            <img src="\images\image6.jpg" class="card-img card-image" alt="">
+            <img src="\images\image6.jpg" class="card-img card-image">
           </div>
         </div>
       </div>
       <div class="card mb-3 bottom">
-      <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="\images\image5.jpg" class="card-img" alt="">
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">カードのタイトル</h5>
-            <p class="card-text">...</p>
-            <p class="card-text"><small class="text-muted">最終更新3分前</small></p>
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="\images\image5.jpg" class="card-img" alt="">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">前置詞共起度検索</h5>
+              <p class="card-text">前置詞を選択（もしくはにゅりょく）すると、その語と共起関係を持つ動詞と名詞が表示されます。検索結果は共起度（結びつきの度合い）が高い順に表示され、これは同時に使われる頻度を表します。</p>
+              <div class="bth_contents">
+                <a href="/new" role="button" class="btn btn-outline-info"><i class="fas fa-search"></i>検索する</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
