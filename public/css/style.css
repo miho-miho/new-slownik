@@ -107,6 +107,11 @@ footer {
   text-align: center;
 }
 
+table {
+  text-align: center;
+  padding: 10 10 0 0;
+}
+
 table th {
   padding: 10px 10px;
 }
@@ -116,6 +121,8 @@ table th {
   float: left;
   width: 400px;
   empty-cells: show;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 
 .tables td {
@@ -129,6 +136,7 @@ table tr:nth-child(odd){
 
 .word-info {
   width: 700px;
+  padding-bottom: 50px;
 }
 
 .word-info table td {
@@ -146,15 +154,3 @@ dd {
 }
 
 /*request.ejsの設定*/
-
-ul, li {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-
-.new-button {
-    margin-top: 20px;
-    margin-left: 40px;
-}
