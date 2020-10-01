@@ -8,29 +8,35 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-
-<body class="container">
+<body>
   <header>
-    <div class="header-menu">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="/">ホーム</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/table">名詞格変化逆引き辞書</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/request">単語リクエスト</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/new">前置詞共起度検索</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/">このサイトについて</a>
-        </li>
-      </ul>
+    <div class="jumbotron jumbotron-fluid" style="background:url(/images/image1.jpg); background-size: cover;">
+      <div class="header-menu">
+        <ul class="nav navbar-right">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/table">名詞格変化逆引き辞書</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/request">単語リクエスト</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/new">前置詞共起度検索</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">このサイトについて</a>
+            </li>
+          </ul>
+      </div>
+      <div class="container">
+        <h1><a href="/" id="header-logo">Słownik</a></h1>
+        <p class="lead">日本語で使えるポーランド語学習支援Webアプリケーション</p>
+      </div>
     </div>
   </header>
+  <div class="main2 container">
   <div class="mainlogo">
     <h1>名詞辞書</h1>
   </div>
@@ -95,15 +101,14 @@
         $('#a3').replaceWith('<a id = "request"></a>');
       });
     </script>
-  <div class="search-contents">
+  <div class="search-contents container">
     <div class="word-info">
       <% rsWordlist.forEach(function (item) { %>
       <table border="1" width=auto>
-        <tr>
-          　　 <th>見出し語</th>
-          <td><%= item.headword %></td>
-          　　
-        </tr>
+            <tr>
+          　　<th>見出し語</th>
+              <td><%= item.headword %></td>
+          　</tr>
         　　 <tr>
           　　 <th>日本語訳</th>
           　　 <td><%= item.japanese %></td>
@@ -111,8 +116,7 @@
         　　 <tr>
           　　 <th>名詞性</th>
           　　 <td><%= item.gender %></td>
-          　　 </tr>
-        　　
+            </tr>　
       </table>
       <% }) %>
     </div>
@@ -176,6 +180,7 @@
        </table>
      <% }) %>
     </div>
+  </div>
   </div>
 </body>
 

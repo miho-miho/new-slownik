@@ -33,24 +33,18 @@ header {
 }
 
 .header-menu {
-  height: 65px;
-  width: 100%;
-  z-index: 20;
-  left: 0ł
+  color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.nav-link {
+  color: white;
+  font-size: 14px;
 }
 
 /* index.ejsの設定 */
-.header-menu a {
-  margin: 5px;
-  padding: 10px;
-  color: black;
-  font-size: 20px;
-}
-
-.header-menu a:hover {
-  color: black;
-
-}
 
 .contents {
   box-sizing: border-box;
@@ -67,6 +61,60 @@ header {
   position: relative;
 }
 
+.card-title {
+  font-weight: bolder;
+  text-align: center;
+}
+
+.card-text {
+  color: gray;
+}
+
 .bth_contents {
   text-align: center;
+}
+
+/*table.ejsの設定*/
+
+table {
+ border-collapse: collapse;
+ border-spacing: 0;
+ margin: 50px 0px;
+ text-align: center;
+}
+
+table th {
+  padding: 10px 10px;
+}
+
+.tables {
+  float: left;
+  width: 400px;
+  empty-cells: show;
+}
+
+.tables td {
+  width: 70%;
+}
+
+table tr:nth-child(odd){
+  background-color: #eee
+}
+
+.word-info {
+  width: 700px;
+}
+
+.word-info table td {
+  width: 70%;
+}
+
+dt {
+  float: left;
+  clear: left;
+	width: 120px;
+}
+
+dd {
+  float: left;
 }
