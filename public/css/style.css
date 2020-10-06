@@ -76,6 +76,19 @@ header {
 
 /*table.ejsの設定*/
 
+.mainlogo p {
+  color: gray;
+}
+
+#message {
+  padding-top: 10px;
+  color: gray;
+}
+
+#message p {
+  line-height: 10px;
+}
+
 table {
  border-collapse: collapse;
  border-spacing: 0;
