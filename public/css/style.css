@@ -74,6 +74,20 @@ header {
   text-align: center;
 }
 
+.preamble h3 {
+  text-align: center;
+  color: gray;
+  font-weight: bolder;
+}
+
+.preamble p {
+  color: gray;
+}
+
+#data {
+  text-align: right;
+}
+
 /*table.ejsの設定*/
 
 .mainlogo p {
